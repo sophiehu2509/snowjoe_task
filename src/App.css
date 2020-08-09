@@ -1,38 +1,108 @@
+*{
+  list-style: none;
+}
+#root{
+  background-color: #F2F3F4;
+}
 .App {
+  
+}
+
+.container{
+  position: relative;
+  
+}
+.header{
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.result{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.result >a{
+    text-decoration: underline !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title{
+  background-color: red;
+  padding:5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.question{
+  padding:5px;
+  text-align:left;
+  background-color: #FDFEFE;
+  
+  border-radius: 10px;
+  margin:10px;
+  box-shadow: 2px 2px 5px #ABB2B9;
 }
 
-.App-link {
-  color: #61dafb;
+.question.red{
+  border:1px solid red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.question.green{
+  border:1px solid green;
 }
+
+.question.yellow{
+  border:1px solid yellow;
+}
+
+.question >ul{
+  margin:15px;
+}
+
+.answerItem.greenItem{
+  background-color: #28B463;
+  border-radius: 5px;
+}
+
+.answerItem{
+  margin:5px;
+  display:block;
+}
+
+.answerItem >label{
+  text-align:left;
+  margin:5px;
+
+}
+
+.bottomMark{
+  text-align: right;
+}
+.bottomMark.correct{
+  color:green;
+}
+.bottomMark.wrong{
+  color:red;
+}
+
+
+.footer{
+  padding:30px;
+  text-align: center;
+}
+
+.btn{
+  display:block;
+  
+  padding:10px !important;
+  margin:10px;
+}
+
+.btn-success{
+  margin:auto;
+  
+}
+
+.info{
+  color:red
+}
+
+
+

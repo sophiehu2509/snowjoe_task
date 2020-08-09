@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {QuestionProvider} from './Context'
+import 'bootstrap/dist/css/bootstrap.css';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <QuestionProvider>
     <App />
-  </React.StrictMode>,
+  </QuestionProvider>,
   document.getElementById('root')
 );
 
