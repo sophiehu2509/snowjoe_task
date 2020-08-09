@@ -1,8 +1,11 @@
 *{
   list-style: none;
+  margin:0px;
+  padding:0px;
 }
 #root{
   background-color: #F2F3F4;
+  position: relative;
 }
 
 .container{
@@ -10,8 +13,8 @@
   
 }
 .header{
-  margin-top:30px;
   margin-bottom:30px;
+  padding-top:30px;
 }
 
 .result{
@@ -25,6 +28,9 @@
 .title{
   background-color: red;
   padding:5px;
+  position:fixed;
+  width:100%;
+  z-index: 999;
 }
 
 .question{
