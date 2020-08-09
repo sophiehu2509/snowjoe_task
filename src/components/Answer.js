@@ -1,11 +1,11 @@
 import React from 'react'
-// import {QuestionConsumer} from '../Context'
+import PropTypes from 'prop-types'
 
 function getClass(countNum, countRes, result, questionNum, index) {
 
    if(countNum < 10){
        return "answerItem"
-   }else if(countRes[index] === 0){
+   }else if(countRes[questionNum] === 0){
        if(index === result[questionNum]){
         return "answerItem greenItem"
        } 
@@ -30,4 +30,12 @@ export default function Answer(props) {
        </li> 
      
     )
+}
+
+Answer.propTypes = {
+    answerCountNum:PropTypes.number.isRequired,
+    answerCountRes:PropTypes.array.isRequired,
+    answerId:PropTypes.number.isRequired,
+    answerResult:PropTypes.array.isRequired,
+    questionNum:PropTypes.number.isRequired
 }

@@ -12,7 +12,7 @@ export class QuestionProvider extends Component {
         answerSelected:[], //user choosed answer
         result:[],  //corrent answer 
         countRes:[],   //mark answer 
-        countNum:0,
+        countNum:0,    //count unfinished question 
         finishQuiz:true,
         submitQuiz:false
     }
@@ -45,7 +45,7 @@ export class QuestionProvider extends Component {
         let answerSelected = this.state.answerSelected;
         let index = event.target.value; //question number 
         answerSelected[index] = parseInt(event.target.id); //selected id
-
+        
         
         let countRes = this.state.countRes;
         if( answerSelected[index] === this.state.result[index]){
@@ -62,7 +62,7 @@ export class QuestionProvider extends Component {
     }
 
     submitAnswer = () =>{
-      
+       console.log(this.state)
         let countRes = this.state.countRes;
         let countNum = 0;
         for(var i = 0; i<countRes.length; i++){
@@ -83,8 +83,6 @@ export class QuestionProvider extends Component {
         this.setState({
             submitQuiz:true,
             countNum:countNum
-        }, () => {
-            console.log(this.state)
         })
      
     }

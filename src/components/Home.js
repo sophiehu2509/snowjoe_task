@@ -5,13 +5,13 @@ import Header from './Header'
 import Quiz from './Quiz'
 import Result from './Result'
 import Show from './Show'
+import PropTypes from 'prop-types'
 
 
 export default class Home extends Component {
     static contextType = QuestionContext
 
     showRes = () => {
-        console.log(this.context)
         if(this.context.submitQuiz && this.context.countNum === 10){
             return true;
         }
@@ -32,4 +32,11 @@ export default class Home extends Component {
             </>
         )
     }
+}
+
+Home.propTypes = {
+    context: PropTypes.shape({
+        submitQuiz:PropTypes.bool.isRequired, 
+        countNum:PropTypes.number.isRequired, 
+    })
 }

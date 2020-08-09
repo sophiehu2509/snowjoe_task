@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
 import {QuestionContext} from  '../Context'
 import Loading from './Loading'
-// import {Row} from 'react-bootstrap'
 import Answer from './Answer'
+import PropTypes from 'prop-types'
 
 export default class Quiz extends Component {
     static contextType = QuestionContext
+
+    static propTypes = {
+        context: PropTypes.shape({
+            quiz:PropTypes.array.isRequired,
+            loading:PropTypes.bool.isRequired, 
+            answerSelected:PropTypes.array.isRequired, 
+            submitQuiz:PropTypes.bool.isRequired,
+            countNum:PropTypes.number.isRequired, 
+            countRes:PropTypes.array.isRequired, 
+            result:PropTypes.array.isRequired, 
+            handleChangeAnswer:PropTypes.func.isRequired,
+        })
+    }
     
     getClass =(index) => {
 
@@ -13,7 +26,10 @@ export default class Quiz extends Component {
         let countRes = this.context.countRes;
 
         if(countNum < 10){
-            return "question yellow"
+            if(countRes[index] === -1){
+                return "question yellow"
+            }
+            return "question"
         }else if(countRes[index] === 0){
             return "question red"
         }else {
@@ -65,3 +81,5 @@ export default class Quiz extends Component {
         )
     }
 }
+
+
