@@ -78,13 +78,14 @@
 .bottomMark{
   text-align: right;
 }
+
 .bottomMark.correct{
   color:green;
 }
+
 .bottomMark.wrong{
   color:red;
 }
-
 
 .footer{
   padding:30px;
